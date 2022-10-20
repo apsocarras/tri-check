@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="js/scripts.js"></script>
+  <title>Triangle Tracker</title>
+</head>
+<body>
+  <h2>Input three lengths for the sides of triangle</h2>
+  <form>
+    <label for="side1Input">Side 1:</label>
+    <input id="side1Input" type="number" name="side1Input">
+    <label for="side2Input">Side 2:</label>
+    <input id="side2Input" type="number" name="side2Input">
+    <label for="side3Input">Side 3:</label>
+    <input id="side3Input" type="number" name="side3Input">
+
+    <div id="error" class="hidden">
+      <p>Error: Please enter 3 whole numbers.</p>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="is-triangle" class="hidden">
+    <p>Your three lengths form a <span id="triangle-type"></span> triangle.</p>
+  </div>
+
+  <div id="not-triangle" class="hidden">
+    <p>Your three lengths do not form a triangle.</p>
+  </div>
+  
+</body>
+</html>
