@@ -10,6 +10,17 @@ function displayResults(triDescriptor) {
   }
 };
 
+function reset() {
+  // reset input values
+  document.getElementById("side1Input").value = null;
+  document.getElementById("side2Input").value = null;
+  document.getElementById("side3Input").value = null;
+  // hide each of the result/error messages
+  document.getElementById("is-triangle").setAttribute("class", "hidden");
+  document.getElementById("not-triangle").setAttribute("class", "hidden");
+  document.getElementById("error").setAttribute("class", "hidden");
+}
+
 // Business Logic
 
 function tri_check(){
@@ -42,7 +53,7 @@ function tri_check(){
     } 
     // Scalene: no sides are equal.
       else {     // a !== b && a !== c && b !== c
-      result = "scalene"; 
+      result = "scaleene"; 
     }
   }  
   return result;
@@ -58,12 +69,15 @@ window.addEventListener("load", function() {
     event.preventDefault();
     // Retrieve input & check triangle identity
     const triType = tri_check();
-    console.log(triType);
     // Use value of result to alter DOM
     displayResults(triType);
-      // Unhide appropriate div
-      // Display result value
+    
+    // Reset button functionality
+    // unhide botton on submission of form
+    document.getElementById("resetButton").removeAttribute("class");
+    // define variable of the reset button
+    const resetBtn = document.getElementById("resetButton");
+    // Run reset function upon click of the reset button
+    resetBtn.addEventListener("click", reset);
+    });
   });
-
-
-});
